@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>My Watchlist</title>
+</head>
+<body>
+
+<h1>My Watchlist</h1>
+
+<ul>
+  <th>Movie Title</th>
+  <th>Director</th>
+  <th>Year</th>
+  <th>Genre</th>
+</ul>
+
+<ul>
+  <li th:each="movie : ${movies}">
+    <a th:href="@{/movie/{tmdbId}(tmdbId=${movie.tmdbId})}" th:text="${movie.title}"></a>
+  </li>
+</ul>
+
+
+<h2>Add a movie</h2>
+
+<form action="/watchlist/add" method="post">
+  <label for="title">Title:</label>
+  <input type="text" name="title" id="title">
+  <br>
+  <label for="director">Director:</label>
+  <input type="text" name="director" id="director">
+  <br>
+  <label for="year">Year:</label>
+  <input type="text" name="year" id="year">
+  <br>
+  <label for="genre">Genre:</label>
+  <input type="text" name="genre" id="genre">
+  <br>
+  <input type="submit" value="">
+</form>
+
+</body>
+</html>

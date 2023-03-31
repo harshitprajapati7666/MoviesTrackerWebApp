@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Details</title>
+</head>
+<body>
+<h1 th:text="${movie.title}"></h1>
+<img th:src="${movie.posterUrl}" th:alt="${movie.title} Poster" />
+<p th:text="${movie.overview}"></p>
+</body>
+</html>
